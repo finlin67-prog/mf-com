@@ -1,0 +1,283 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* Updated theme to match GTMStack.pro brand - Executive Blueprint aesthetic */
+:root {
+  --background: oklch(0.98 0.005 240); /* Off-white with slight cool tint */
+  --foreground: oklch(0.18 0.02 240); /* Dark Navy #0B1E39 */
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.18 0.02 240);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.18 0.02 240);
+  --primary: oklch(0.65 0.19 220); /* Indigo #6366F1 */
+  --primary-foreground: oklch(0.98 0.005 240);
+  --secondary: oklch(0.75 0.15 195); /* Cyan #22D3EE */
+  --secondary-foreground: oklch(0.18 0.02 240);
+  --muted: oklch(0.55 0.01 240); /* Slate Gray #64748B */
+  --muted-foreground: oklch(0.55 0.01 240);
+  --accent: oklch(0.75 0.15 195); /* Cyan accent */
+  --accent-foreground: oklch(0.18 0.02 240);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: oklch(0.88 0.005 240);
+  --input: oklch(0.88 0.005 240);
+  --ring: oklch(0.65 0.19 220);
+  --chart-1: oklch(0.65 0.19 220);
+  --chart-2: oklch(0.75 0.15 195);
+  --chart-3: oklch(0.55 0.01 240);
+  --chart-4: oklch(0.45 0.15 260);
+  --chart-5: oklch(0.35 0.1 240);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.18 0.02 240); /* Dark Navy */
+  --foreground: oklch(0.98 0.005 240);
+  --card: oklch(0.22 0.02 240);
+  --card-foreground: oklch(0.98 0.005 240);
+  --popover: oklch(0.22 0.02 240);
+  --popover-foreground: oklch(0.98 0.005 240);
+  --primary: oklch(0.75 0.15 195); /* Cyan in dark mode */
+  --primary-foreground: oklch(0.18 0.02 240);
+  --secondary: oklch(0.65 0.19 220); /* Indigo in dark mode */
+  --secondary-foreground: oklch(0.98 0.005 240);
+  --muted: oklch(0.35 0.02 240);
+  --muted-foreground: oklch(0.65 0.01 240);
+  --accent: oklch(0.65 0.19 220);
+  --accent-foreground: oklch(0.98 0.005 240);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: oklch(0.3 0.02 240);
+  --input: oklch(0.3 0.02 240);
+  --ring: oklch(0.75 0.15 195);
+  --chart-1: oklch(0.75 0.15 195);
+  --chart-2: oklch(0.65 0.19 220);
+  --chart-3: oklch(0.55 0.08 200);
+  --chart-4: oklch(0.45 0.15 260);
+  --chart-5: oklch(0.6 0.12 180);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
+}
+
+@theme inline {
+  /* Updated to Inter and IBM Plex Sans fonts */
+  --font-sans: "Inter", "system-ui", "sans-serif";
+  --font-mono: "IBM Plex Sans", "Geist Mono", "monospace";
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* ===== Print Styles for Resume/CV Page ===== */
+@media print {
+  /* Page size & margins — Letter (default) */
+  @page {
+    size: Letter;
+    margin: 0.6in;
+  }
+
+  /* Reset colors to ensure legibility and preserve brand accents */
+  html,
+  body {
+    color: #000 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Hide site chrome */
+  header,
+  nav,
+  footer,
+  .no-print,
+  .mobile-nav,
+  .site-cta,
+  .site-announcement {
+    display: none !important;
+  }
+
+  /* Make main content full-width and single column */
+  main,
+  .resume-container,
+  .container,
+  .prose {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding: 0 !important;
+  }
+
+  /* Typography scale for print (comfortable density) */
+  h1 {
+    font-size: 20pt !important;
+    margin: 0 0 8pt 0;
+  }
+  h2 {
+    font-size: 14pt !important;
+    margin: 14pt 0 6pt 0;
+  }
+  h3 {
+    font-size: 12pt !important;
+    margin: 10pt 0 4pt 0;
+  }
+  p,
+  li {
+    font-size: 10pt !important;
+    line-height: 1.35 !important;
+  }
+  small,
+  .muted {
+    font-size: 9pt !important;
+  }
+
+  /* Links: black text + show URL after external links */
+  a {
+    color: #000 !important;
+    text-decoration: underline !important;
+  }
+  a[href^="http"]:after {
+    content: " (" attr(href) ")";
+    font-size: 9pt;
+    color: #444;
+  }
+  /* Don't show URLs for internal links or anchors */
+  a[href^="/"]:after,
+  a[href^="#"]:after {
+    content: "" !important;
+  }
+
+  /* Images and icons */
+  img,
+  svg {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+  .avatar,
+  .logo {
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  /* Remove shadows, borders too heavy on paper */
+  * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  .card,
+  .panel {
+    border: 1px solid #ddd !important;
+  }
+
+  /* Keep sections together; avoid orphan headings */
+  h2,
+  h3 {
+    page-break-after: avoid;
+    page-break-inside: avoid;
+  }
+  .section,
+  .resume-section {
+    page-break-inside: avoid;
+  }
+
+  /* Lists tighter for print */
+  ul,
+  ol {
+    margin: 0 0 6pt 1.1em !important;
+    padding: 0 !important;
+  }
+  li {
+    margin: 2pt 0 !important;
+  }
+
+  /* Tables (if any) */
+  table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+  }
+  th,
+  td {
+    border: 1px solid #ddd !important;
+    padding: 6pt !important;
+  }
+
+  /* Optional: brand accent line at top of first page */
+  .print-brand-line {
+    height: 2px;
+    width: 100%;
+    background: linear-gradient(90deg, #22d3ee, #6366f1);
+    margin-bottom: 10pt;
+  }
+
+  /* Hide interactive UI elements that don't make sense on paper */
+  button,
+  .btn,
+  .tab-list,
+  .accordion-toggle,
+  .sticky-sidebar {
+    display: none !important;
+  }
+}
+
+/* Utility class to force a page break before a section when printing */
+@media print {
+  .page-break {
+    page-break-before: always;
+    break-before: page;
+  }
+}
